@@ -6,8 +6,24 @@
   <bean id="processEngineConfiguration" class="org.activiti.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">
     <property name="dataSource" ref="dataSource" />
     <property name="databaseSchemaUpdate" value="true" />
+
+    <property name="dbHistoryUsed" value="true" />
+    <property name="dbIdentityUsed" value="true" />
+
+    <property name="historyLevel" value="FULL" />
+    <property name="enableDatabaseEventLogging" value="true" />
+
   </bean>
 
-  <bean id="dataSource" class="com"
+  <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+        init-method="init" destroy-method="close">
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    <property name="url" value="jdbc:mysql://localhost:3306/activiti6Study" />
+    <property name="username" value="root" />
+    <property name="password" value="root"/>
+    <property name="initialSize" value="1" />
+    <property name="maxActive" value="20" />
+    <property name="filters" value="stat, slf4j" />
+  </bean>
 
 </beans>

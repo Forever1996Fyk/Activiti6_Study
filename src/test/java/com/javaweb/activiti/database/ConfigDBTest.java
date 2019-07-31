@@ -4,6 +4,8 @@ import com.google.common.collect.Lists;
 import org.activiti.engine.ManagementService;
 import org.activiti.engine.ProcessEngine;
 import org.activiti.engine.ProcessEngineConfiguration;
+import org.activiti.engine.impl.interceptor.Command;
+import org.activiti.engine.impl.interceptor.CommandContext;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,9 +24,18 @@ import java.util.Map;
 public class ConfigDBTest {
     private static final Logger logger = LoggerFactory.getLogger(ConfigDBTest.class);
 
+    /**
+     * @Description 创建表结构
+     *
+     * @Author YuKai Fan
+     * @Date 20:16 2019/7/31
+     * @Param
+     * @return
+     **/
     @Test
     public void testDbConfig() {
-        ProcessEngine processEngine = ProcessEngineConfiguration.createProcessEngineConfigurationFromResourceDefault()
+        ProcessEngine processEngine = ProcessEngineConfiguration.
+                createProcessEngineConfigurationFromResource("activiti-mysql.cfg.xml")
                 .buildProcessEngine();
 
         ManagementService managementService = processEngine.getManagementService();
@@ -38,5 +49,30 @@ public class ConfigDBTest {
             logger.info("tableName = {}", tableName);
         }
         logger.info("tableCount.size = {}", tableCount.size());
+    }
+
+    /**
+     * @Description 清理表结构
+     *
+     * @Author YuKai Fan
+     * @Date 20:16 2019/7/31
+     * @Param
+     * @return
+     **/
+    @Test
+    public void dropTest() {
+        ProcessEngine processEngine = ProcessEngineConfiguration.
+                createProcessEngineConfigurationFromResource("activiti-mysql.cfg.xml")
+                .buildProcessEngine();
+
+        ManagementService managementService = processEngine.getManagementService();
+
+        Object o = managementService.executeCommand(new Command<Object>() {
+            public Object execute(CommandContext commandContext) {
+                commandContext.getDbSqlSession().dbSchemaDrop();
+                logger.info("删除表结构");
+                return null;
+            }
+        });
     }
 }
