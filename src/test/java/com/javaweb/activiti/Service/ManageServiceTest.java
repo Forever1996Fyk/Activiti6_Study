@@ -35,7 +35,7 @@ public class ManageServiceTest {
     public ActivitiRule activitiRule = new ActivitiRule("activiti_job.cfg.xml");
 
     @Test
-    @Deployment(resources = {"my-process-job.bpmn20.xml"})
+    @Deployment(resources = {"bpmn/my-process-job.bpmn20.xml"})
     public void testJobQuery() {
         ManagementService managementService = activitiRule.getManagementService();
 
@@ -62,7 +62,7 @@ public class ManageServiceTest {
      * @return
      **/
     @Test
-    @Deployment(resources = {"my-process-job.bpmn20.xml"})
+    @Deployment(resources = {"bpmn/my-process-job.bpmn20.xml"})
     public void testTablePageQuery() {
         ManagementService managementService = activitiRule.getManagementService();
         TablePage tablePage = managementService.createTablePageQuery()
@@ -84,7 +84,7 @@ public class ManageServiceTest {
      * @return 
      **/
     @Test
-    @Deployment(resources = {"my-process.bpmn20.xml"})
+    @Deployment(resources = {"bpmn/my-process.bpmn20.xml"})
     public void testExecuteCustomSql() {
         activitiRule.getRuntimeService().startProcessInstanceByKey("my-process");
 
@@ -110,7 +110,7 @@ public class ManageServiceTest {
      * @return 
      **/
     @Test
-    @Deployment(resources = {"my-process.bpmn20.xml"})
+    @Deployment(resources = {"bpmn/my-process.bpmn20.xml"})
     public void testCommand() {
         ManagementService managementService = activitiRule.getManagementService();
 

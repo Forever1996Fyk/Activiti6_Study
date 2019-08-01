@@ -41,7 +41,7 @@ public class RepositoryServiceTest {
 
         DeploymentBuilder deploymentBuilder = repositoryService.createDeployment();
         deploymentBuilder.name("测试部署资源1")
-                .addClasspathResource("my-process.bpmn20.xml")
+                .addClasspathResource("bpmn/my-process.bpmn20.xml")
                 .addClasspathResource("second_approve.bpmn20.xml");
 
         Deployment deploy = deploymentBuilder.deploy();
@@ -49,7 +49,7 @@ public class RepositoryServiceTest {
 
         DeploymentBuilder deploymentBuilder1 = repositoryService.createDeployment();
         deploymentBuilder1.name("测试部署资源2")
-                .addClasspathResource("my-process.bpmn20.xml")
+                .addClasspathResource("bpmn/my-process.bpmn20.xml")
                 .addClasspathResource("second_approve.bpmn20.xml");
         deploymentBuilder1.deploy();
 
@@ -84,7 +84,7 @@ public class RepositoryServiceTest {
      * @return
      **/
     @Test
-    @org.activiti.engine.test.Deployment(resources = {"my-process.bpmn20.xml"})
+    @org.activiti.engine.test.Deployment(resources = {"bpmn/my-process.bpmn20.xml"})
     public void testSuspend(){
         RepositoryService repositoryService = activitiRule.getRepositoryService();
 
@@ -114,7 +114,7 @@ public class RepositoryServiceTest {
      * @return 
      **/
     @Test
-    @org.activiti.engine.test.Deployment(resources = {"my-process.bpmn20.xml"})
+    @org.activiti.engine.test.Deployment(resources = {"bpmn/my-process.bpmn20.xml"})
     public void testCandidateStarter(){
         RepositoryService repositoryService = activitiRule.getRepositoryService();
 

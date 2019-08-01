@@ -2,13 +2,8 @@ package com.javaweb.activiti.database;
 
 import com.google.common.collect.Maps;
 import org.activiti.engine.FormService;
-import org.activiti.engine.ManagementService;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
-import org.activiti.engine.impl.interceptor.Command;
-import org.activiti.engine.impl.interceptor.CommandContext;
-import org.activiti.engine.impl.persistence.entity.ByteArrayEntity;
-import org.activiti.engine.impl.persistence.entity.ByteArrayEntityImpl;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
 import org.activiti.engine.test.ActivitiRule;
@@ -41,7 +36,7 @@ public class DbHistoryTest {
     public void testByteArray() {
         activitiRule.getRepositoryService().createDeployment()
                 .name("测试部署")
-                .addClasspathResource("my-process.bpmn20.xml")
+                .addClasspathResource("bpmn/my-process.bpmn20.xml")
                 .deploy();
 
         RuntimeService runtimeService = activitiRule.getRuntimeService();

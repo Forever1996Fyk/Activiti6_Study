@@ -37,7 +37,7 @@ public class RuntimeServiceTest {
      * @return
      **/
     @Test
-    @org.activiti.engine.test.Deployment(resources = {"my-process.bpmn20.xml"})
+    @org.activiti.engine.test.Deployment(resources = {"bpmn/my-process.bpmn20.xml"})
     public void testStartProcessByKey() {
         RuntimeService runtimeService = activitiRule.getRuntimeService();
         Map<String, Object> variables = Maps.newHashMap();
@@ -57,7 +57,7 @@ public class RuntimeServiceTest {
      * @return
      **/
     @Test
-    @org.activiti.engine.test.Deployment(resources = {"my-process.bpmn20.xml"})
+    @org.activiti.engine.test.Deployment(resources = {"bpmn/my-process.bpmn20.xml"})
     public void testStartProcessById() {
         RepositoryService repositoryService = activitiRule.getRepositoryService();
         ProcessDefinition processDefinition = repositoryService.
@@ -82,7 +82,7 @@ public class RuntimeServiceTest {
      * @return
      **/
     @Test
-    @org.activiti.engine.test.Deployment(resources = {"my-process.bpmn20.xml"})
+    @org.activiti.engine.test.Deployment(resources = {"bpmn/my-process.bpmn20.xml"})
     public void testProcessInstanceBuilder() {
         RuntimeService runtimeService = activitiRule.getRuntimeService();
         Map<String, Object> variables = Maps.newHashMap();
@@ -105,7 +105,7 @@ public class RuntimeServiceTest {
      * @return
      **/
     @Test
-    @org.activiti.engine.test.Deployment(resources = {"my-process.bpmn20.xml"})
+    @org.activiti.engine.test.Deployment(resources = {"bpmn/my-process.bpmn20.xml"})
     public void testVariables() {
         RuntimeService runtimeService = activitiRule.getRuntimeService();
         Map<String, Object> variables = Maps.newHashMap();
@@ -134,7 +134,7 @@ public class RuntimeServiceTest {
      * @return
      **/
     @Test
-    @org.activiti.engine.test.Deployment(resources = {"my-process.bpmn20.xml"})
+    @org.activiti.engine.test.Deployment(resources = {"bpmn/my-process.bpmn20.xml"})
     public void testProcessInstance() {
         RuntimeService runtimeService = activitiRule.getRuntimeService();
         Map<String, Object> variables = Maps.newHashMap();
@@ -161,7 +161,7 @@ public class RuntimeServiceTest {
      * @return
      **/
     @Test
-    @org.activiti.engine.test.Deployment(resources = {"my-process.bpmn20.xml"})
+    @org.activiti.engine.test.Deployment(resources = {"bpmn/my-process.bpmn20.xml"})
     public void testExecutionQuery() {
         RuntimeService runtimeService = activitiRule.getRuntimeService();
         Map<String, Object> variables = Maps.newHashMap();
@@ -191,7 +191,7 @@ public class RuntimeServiceTest {
      * @return 
      **/
     @Test
-    @org.activiti.engine.test.Deployment(resources = {"my-process-trigger.bpmn20.xml"})
+    @org.activiti.engine.test.Deployment(resources = {"bpmn/my-process-trigger.bpmn20.xml"})
     public void testTrigger() {
         RuntimeService runtimeService = activitiRule.getRuntimeService();
         ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("my-process");
@@ -217,7 +217,7 @@ public class RuntimeServiceTest {
      * @return
      **/
     @Test
-    @org.activiti.engine.test.Deployment(resources = {"my-process-signal-received.bpmn20.xml"})
+    @org.activiti.engine.test.Deployment(resources = {"bpmn/my-process-signal-received.bpmn20.xml"})
     public void testSignalEventReceived() {
         RuntimeService runtimeService = activitiRule.getRuntimeService();
         ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("my-process");
@@ -246,7 +246,7 @@ public class RuntimeServiceTest {
      * @return
      **/
     @Test
-    @org.activiti.engine.test.Deployment(resources = {"my-process-message-received.bpmn20.xml"})
+    @org.activiti.engine.test.Deployment(resources = {"bpmn/my-process-message-received.bpmn20.xml"})
     public void testMessageEventReceived() {
         RuntimeService runtimeService = activitiRule.getRuntimeService();
         ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("my-process");
@@ -275,7 +275,7 @@ public class RuntimeServiceTest {
      * @return
      **/
     @Test
-    @org.activiti.engine.test.Deployment(resources = {"my-process-message.bpmn20.xml"})
+    @org.activiti.engine.test.Deployment(resources = {"bpmn/my-process-message.bpmn20.xml"})
     public void testMessageStart() {
         RuntimeService runtimeService = activitiRule.getRuntimeService();
 

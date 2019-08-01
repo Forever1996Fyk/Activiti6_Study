@@ -74,7 +74,7 @@ public class DbRuntimeTest {
     public void testMessage() {
         activitiRule.getRepositoryService().
                 createDeployment().
-                addClasspathResource("my-process-message.bpmn20.xml")
+                addClasspathResource("bpmn/my-process-message.bpmn20.xml")
                 .deploy();
     }
 
@@ -89,7 +89,7 @@ public class DbRuntimeTest {
     @Test
     public void testMessageReceived() {
         activitiRule.getRepositoryService().createDeployment()
-                .addClasspathResource("my-process-message-received.bpmn20.xml")
+                .addClasspathResource("bpmn/my-process-message-received.bpmn20.xml")
                 .deploy();
 
         ProcessInstance processInstance = activitiRule.getRuntimeService().startProcessInstanceByKey("my-process");
@@ -107,7 +107,7 @@ public class DbRuntimeTest {
     @Test
     public void testJob() throws InterruptedException {
         activitiRule.getRepositoryService().createDeployment()
-                .addClasspathResource("my-process-job.bpmn20.xml")
+                .addClasspathResource("bpmn/my-process-job.bpmn20.xml")
                 .deploy();
 
         Thread.sleep(1000 * 30L);

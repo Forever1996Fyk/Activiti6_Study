@@ -30,7 +30,7 @@ public class HistoryServiceTest {
     public ActivitiRule activitiRule = new ActivitiRule("activiti_history.cfg.xml");
 
     @Test
-    @Deployment(resources = {"my-process.bpmn20.xml"})
+    @Deployment(resources = {"bpmn/my-process.bpmn20.xml"})
     public void testHistory() {
         HistoryService historyService = activitiRule.getHistoryService();
 

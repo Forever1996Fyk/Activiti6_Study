@@ -34,7 +34,7 @@ public class FormServiceTest {
 
 
     @Test
-    @Deployment(resources = {"my-process-form.bpmn20.xml"})
+    @Deployment(resources = {"bpmn/my-process-form.bpmn20.xml"})
     public void testFormService() {
         FormService formService = activitiRule.getFormService();
         ProcessDefinition processDefinition = activitiRule.getRepositoryService().createProcessDefinitionQuery().singleResult();

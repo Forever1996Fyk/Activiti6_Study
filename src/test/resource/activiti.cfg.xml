@@ -8,6 +8,9 @@
     <property name="jdbcDriver" value="org.h2.Driver" />
     <property name="jdbcUsername" value="sa" />
     <property name="jdbcPassword" value="" />
+
+    <property name="asyncExecutorActivate" value="true" />
+    <property name="enableVerboseExecutionTreeLogging" value="true" />
   </bean>
 
 </beans>

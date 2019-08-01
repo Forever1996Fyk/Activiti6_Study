@@ -33,7 +33,7 @@ public class DbGeTest {
     public void testByteArray() {
         activitiRule.getRepositoryService().createDeployment()
                 .name("测试部署")
-                .addClasspathResource("my-process.bpmn20.xml")
+                .addClasspathResource("bpmn/my-process.bpmn20.xml")
                 .deploy();
     }
 

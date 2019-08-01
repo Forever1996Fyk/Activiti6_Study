@@ -39,7 +39,7 @@ public class TaskServiceTest {
      * @return
      **/
     @Test
-    @Deployment(resources = {"my-process-task.bpmn20.xml"})
+    @Deployment(resources = {"bpmn/my-process-task.bpmn20.xml"})
     public void testTaskService() {
         Map<String, Object> variables = Maps.newHashMap();
         variables.put("message", "my test message!!!");
@@ -89,7 +89,7 @@ public class TaskServiceTest {
      * @return
      **/
     @Test
-    @Deployment(resources = {"my-process-task.bpmn20.xml"})
+    @Deployment(resources = {"bpmn/my-process-task.bpmn20.xml"})
     public void testTaskServiceUser() {
         Map<String, Object> variables = Maps.newHashMap();
         variables.put("message", "my test message !!!");
@@ -144,7 +144,7 @@ public class TaskServiceTest {
      * @return
      **/
     @Test
-    @Deployment(resources = {"my-process-task.bpmn20.xml"})
+    @Deployment(resources = {"bpmn/my-process-task.bpmn20.xml"})
     public void testTaskServiceAttachment() {
         Map<String, Object> variables = Maps.newHashMap();
         variables.put("message", "my test message !!!");
@@ -170,7 +170,7 @@ public class TaskServiceTest {
      * @return
      **/
     @Test
-    @Deployment(resources = {"my-process-task.bpmn20.xml"})
+    @Deployment(resources = {"bpmn/my-process-task.bpmn20.xml"})
     public void testTaskServiceCommit() {
         Map<String, Object> variables = Maps.newHashMap();
         variables.put("message", "my test message !!!");
